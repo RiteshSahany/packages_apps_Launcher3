@@ -36,6 +36,20 @@ constructor(
     @Named("SAFE_MODE") val isSafeModeEnabled: Boolean,
 ) {
 
+    private var mNeedsRestart: Boolean = false
+
+    fun setNeedsRestart() {
+        mNeedsRestart = true
+    }
+
+    fun checkIfRestartNeeded() {
+        // we destroyed Settings activity with the back button
+        // so we force a restart now if needed without waiting for home button press
+        if (mNeedsRestart) {
+            Utilities.restart(context)
+        }
+    }
+
     companion object {
 
         @JvmField var INSTANCE = DaggerSingletonObject { it.launcherAppState }
