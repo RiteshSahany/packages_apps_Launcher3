@@ -1004,4 +1004,12 @@ public final class Utilities {
             return false;
         }
     }
+
+    public static boolean showQSB(Context context) {
+        return isGSAEnabled(context) && isQSBEnabled(context);
+    }
+
+    private static boolean isQSBEnabled(Context context) {
+        return LauncherPrefs.DOCK_SEARCH.get(context);
+    }
 }
