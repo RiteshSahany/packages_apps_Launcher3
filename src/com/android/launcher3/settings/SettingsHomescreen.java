@@ -117,6 +117,7 @@ public class SettingsHomescreen extends CollapsingToolbarBaseActivity
             case Utilities.KEY_SHORT_PARALLAX:
             case Utilities.KEY_SINGLE_PAGE_CENTER:
             case Utilities.KEY_SMARTSPACE:
+            case Utilities.KEY_HOTSEAT_QSB_OPACITY:
                 LauncherAppState.getInstance(getContext()).setNeedsRestart();
                 break;
             default:
