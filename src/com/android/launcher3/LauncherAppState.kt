@@ -47,7 +47,7 @@ constructor(
         // we destroyed Settings activity with the back button
         // so we force a restart now if needed without waiting for home button press
         if (mNeedsRestart) {
-            Utilities.restart(context)
+            Utilities.restart()
         }
     }
 
