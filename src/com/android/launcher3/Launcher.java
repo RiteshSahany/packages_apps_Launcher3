@@ -1324,8 +1324,6 @@ public class Launcher extends StatefulActivity<LauncherState>
 
         DragView.removeAllViews(this);
         TraceHelper.INSTANCE.endSection();
-
-        LauncherAppState.getInstance(getContext()).setNeedsRestart();
     }
 
     @Override
