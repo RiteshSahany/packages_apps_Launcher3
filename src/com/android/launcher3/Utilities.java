@@ -132,6 +132,8 @@ public final class Utilities {
             >= VERSION_CODES.VANILLA_ICE_CREAM;
 
     private static final long WAIT_BEFORE_RESTART = 750; // ms
+    private static final Object sRestartLock = new Object();
+    private static boolean sRestartScheduled = false;
 
     /**
      * Set on a motion event dispatched from the nav bar. See {@link MotionEvent#setEdgeFlags(int)}.
@@ -990,6 +992,13 @@ public final class Utilities {
     }
 
     public static void restart() {
+        synchronized (sRestartLock) {
+            if (sRestartScheduled) {
+                return;
+            }
+            sRestartScheduled = true;
+        }
+
         MAIN_EXECUTOR.getHandler().postDelayed(() -> {
             System.exit(0);
         }, WAIT_BEFORE_RESTART);
