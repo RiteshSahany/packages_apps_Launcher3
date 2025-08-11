@@ -103,6 +103,7 @@ import android.graphics.PointF;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Typeface;
+import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -747,7 +748,7 @@ public abstract class RecentsView<
     protected boolean mLoadPlanEverApplied;
 
     // Variables for empty state
-    private final Drawable mEmptyIcon;
+    private final AnimatedVectorDrawable mEmptyIcon;
     private final CharSequence mEmptyMessage;
     private final TextPaint mEmptyMessagePaint;
     private final Point mLastMeasureSize = new Point();
@@ -954,7 +955,7 @@ public abstract class RecentsView<
         mClampedScrollOffsetBound = getResources().getDimensionPixelSize(
                 R.dimen.transient_taskbar_clamped_offset_bound);
 
-        mEmptyIcon = context.getDrawable(R.drawable.ic_empty_recents);
+        mEmptyIcon = (AnimatedVectorDrawable) context.getDrawable(R.drawable.ic_empty_recents);
         mEmptyIcon.setCallback(this);
         mEmptyMessage = context.getText(R.string.recents_empty_message);
         mEmptyMessagePaint = new TextPaint();
@@ -5776,6 +5777,9 @@ public abstract class RecentsView<
             int left = (mLastMeasureSize.x - mEmptyIcon.getIntrinsicWidth()) / 2;
             mEmptyIcon.setBounds(left, top, left + mEmptyIcon.getIntrinsicWidth(),
                     top + mEmptyIcon.getIntrinsicHeight());
+            if (mEmptyIcon instanceof AnimatedVectorDrawable) {
+                ((AnimatedVectorDrawable) mEmptyIcon).start();
+            }
         }
     }
 

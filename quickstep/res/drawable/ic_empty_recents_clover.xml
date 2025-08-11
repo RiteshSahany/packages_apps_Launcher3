@@ -1,0 +1,220 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="400dp"
+    android:height="300dp"
+    android:viewportWidth="1000"
+    android:viewportHeight="750">
+
+    <!-- Background Elements -->
+    <group android:name="background_layer">
+        <!-- Grid Pattern -->
+        <path
+            android:name="grid_pattern"
+            android:pathData="M0,0 L1000,0 L1000,750 L0,750 Z"
+            android:fillColor="@android:color/transparent"
+            android:strokeColor="?android:attr/textColorSecondary"
+            android:strokeAlpha="0.05"
+            android:strokeWidth="0.5"/>
+            
+        <!-- Grid Lines -->
+        <group android:name="grid_lines">
+            <path android:pathData="M0,75 L1000,75 M0,150 L1000,150 M0,225 L1000,225 M0,300 L1000,300 M0,375 L1000,375 M0,450 L1000,450 M0,525 L1000,525 M0,600 L1000,600 M0,675 L1000,675"
+                android:strokeColor="?android:attr/textColorSecondary"
+                android:strokeAlpha="0.03"
+                android:strokeWidth="0.5"/>
+            <path android:pathData="M100,0 L100,750 M200,0 L200,750 M300,0 L300,750 M400,0 L400,750 M500,0 L500,750 M600,0 L600,750 M700,0 L700,750 M800,0 L800,750 M900,0 L900,750"
+                android:strokeColor="?android:attr/textColorSecondary"
+                android:strokeAlpha="0.03"
+                android:strokeWidth="0.5"/>
+        </group>
+    </group>
+
+    <!-- Orbital Ring System -->
+    <group android:name="orbital_system">
+        <!-- Outer Ring -->
+        <group 
+            android:name="outer_ring"
+            android:pivotX="500"
+            android:pivotY="375">
+            <path
+                android:name="ring_outer"
+                android:pathData="M500,235 A140,140 0 1,1 499.9,235"
+                android:fillColor="@android:color/transparent"
+                android:strokeColor="?android:attr/colorAccent"
+                android:strokeAlpha="0.15"
+                android:strokeWidth="1"/>
+        </group>
+        
+        <!-- Inner Ring -->
+        <group 
+            android:name="inner_ring"
+            android:pivotX="500"
+            android:pivotY="375">
+            <path
+                android:name="ring_inner"
+                android:pathData="M500,275 A100,100 0 1,1 499.9,275"
+                android:fillColor="@android:color/transparent"
+                android:strokeColor="?android:attr/colorPrimary"
+                android:strokeAlpha="0.2"
+                android:strokeWidth="1"/>
+        </group>
+    </group>
+
+    <!-- Floating App Cards -->
+    <group android:name="floating_cards">
+        <!-- Card 1 - Top Left -->
+        <group 
+            android:name="card_1"
+            android:pivotX="200"
+            android:pivotY="150">
+            <path
+                android:name="card_1_bg"
+                android:pathData="M180,130 L220,130 Q230,130 230,140 L230,160 Q230,170 220,170 L180,170 Q170,170 170,160 L170,140 Q170,130 180,130 Z"
+                android:fillColor="?android:attr/colorPrimary"
+                android:fillAlpha="0.9"/>
+            <!-- Card Icon -->
+            <path
+                android:name="card_1_icon"
+                android:pathData="M190,140 L210,140 L210,160 L190,160 Z M195,145 L205,145 L205,155 L195,155 Z"
+                android:fillColor="#FFFFFF"
+                android:fillAlpha="0.9"/>
+        </group>
+
+        <!-- Card 2 - Top Right -->
+        <group 
+            android:name="card_2"
+            android:pivotX="800"
+            android:pivotY="180">
+            <path
+                android:name="card_2_bg"
+                android:pathData="M780,160 L820,160 Q830,160 830,170 L830,190 Q830,200 820,200 L780,200 Q770,200 770,190 L770,170 Q770,160 780,160 Z"
+                android:fillColor="?android:attr/colorSecondary"
+                android:fillAlpha="0.9"/>
+            <!-- Card Icon -->
+            <circle
+                android:name="card_2_icon"
+                android:cx="800"
+                android:cy="180"
+                android:r="8"
+                android:fillColor="#FFFFFF"
+                android:fillAlpha="0.9"/>
+        </group>
+
+        <!-- Card 3 - Bottom Left -->
+        <group 
+            android:name="card_3"
+            android:pivotX="150"
+            android:pivotY="550">
+            <path
+                android:name="card_3_bg"
+                android:pathData="M130,530 L170,530 Q180,530 180,540 L180,560 Q180,570 170,570 L130,570 Q120,570 120,560 L120,540 Q120,530 130,530 Z"
+                android:fillColor="?android:attr/colorTertiary"
+                android:fillAlpha="0.9"/>
+            <!-- Card Icon -->
+            <path
+                android:name="card_3_icon"
+                android:pathData="M140,540 L160,540 L150,560 Z"
+                android:fillColor="#FFFFFF"
+                android:fillAlpha="0.9"/>
+        </group>
+
+        <!-- Card 4 - Bottom Right -->
+        <group 
+            android:name="card_4"
+            android:pivotX="850"
+            android:pivotY="520">
+            <path
+                android:name="card_4_bg"
+                android:pathData="M830,500 L870,500 Q880,500 880,510 L880,530 Q880,540 870,540 L830,540 Q820,540 820,530 L820,510 Q820,500 830,500 Z"
+                android:fillColor="?android:attr/colorError"
+                android:fillAlpha="0.9"/>
+            <!-- Card Icon -->
+            <path
+                android:name="card_4_icon"
+                android:pathData="M840,510 L860,510 L860,530 L840,530 Z M845,515 L855,515 L855,525 L845,525 Z"
+                android:fillColor="#FFFFFF"
+                android:fillAlpha="0.9"/>
+        </group>
+    </group>
+
+    <!-- Central Element -->
+    <group android:name="central_focus">
+        <!-- Main Circle -->
+        <group 
+            android:name="center_element"
+            android:pivotX="500"
+            android:pivotY="375">
+            <!-- Outer Glow -->
+            <circle
+                android:name="center_glow"
+                android:cx="500"
+                android:cy="375"
+                android:r="65"
+                android:fillColor="?android:attr/colorPrimary"
+                android:fillAlpha="0.1"/>
+            
+            <!-- Main Circle -->
+            <circle
+                android:name="center_main"
+                android:cx="500"
+                android:cy="375"
+                android:r="45"
+                android:fillColor="?android:attr/textColorPrimary"
+                android:fillAlpha="0.1"/>
+                
+            <!-- Inner Circle -->
+            <circle
+                android:name="center_inner"
+                android:cx="500"
+                android:cy="375"
+                android:r="35"
+                android:fillColor="?android:attr/colorSurface"
+                android:fillAlpha="0.8"/>
+                
+            <!-- Central Icon -->
+            <path
+                android:name="center_icon"
+                android:pathData="M485,360 L515,375 L485,390 Z"
+                android:fillColor="?android:attr/colorPrimary"
+                android:fillAlpha="0.9"/>
+        </group>
+    </group>
+
+    <!-- Particle System -->
+    <group android:name="particles">
+        <!-- Particle 1 -->
+        <circle
+            android:name="particle_1"
+            android:cx="300"
+            android:cy="200"
+            android:r="2"
+            android:fillColor="?android:attr/colorPrimary"
+            android:fillAlpha="0.6"/>
+            
+        <!-- Particle 2 -->
+        <circle
+            android:name="particle_2"
+            android:cx="700"
+            android:cy="250"
+            android:r="1.5"
+            android:fillColor="?android:attr/colorSecondary"
+            android:fillAlpha="0.6"/>
+            
+        <!-- Particle 3 -->
+        <circle
+            android:name="particle_3"
+            android:cx="250"
+            android:cy="500"
+            android:r="2"
+            android:fillColor="?android:attr/colorTertiary"
+            android:fillAlpha="0.6"/>
+            
+        <!-- Particle 4 -->
+        <circle
+            android:name="particle_4"
+            android:cx="750"
+            android:cy="550"
+            android:r="1.5"
+            android:fillColor="?android:attr/colorPrimary"
+            android:fillAlpha="0.6"/>
+    </group>
+</vector>
